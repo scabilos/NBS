@@ -1,0 +1,12 @@
+h1 {text-align:center;} 
+#topmenu {margin:auto; width:352px; margin-top:50px; margin-bottom:50px; background-color:orange; height:25px; border-radius:5px;}
+#topmenu a {text-decoration:none; line-height:25px; padding-left:10px; padding-right:10px; color:#44f; font-weight:bold;}
+#topmenu a:hover {background-color:green; color:white; border-radius:3px; padding:1px 5px;}
+#dropdown {position:relative; display:inline-block;}
+#dropdown-content {display: none; position: absolute; min-width: 140px; z-index: 1; background-color:orange;}
+#dropdown-content a {text-decoration: none; display: block;}
+#dropdown:hover #dropdown-content {display: block;}
+#dropbtn {border:none; background:none; padding:0; color:#44f; font-size:1em; font-weight:bold;}
+th {border-bottom:1px solid; background-color:#ddd; height:30px;}
+
+/* Valoszinuleg a dropdown menuket ki lehet venni. Most mar nincs dropdown a fomenuben. */

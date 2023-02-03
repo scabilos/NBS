@@ -1,0 +1,513 @@
+2.8.0
+    Global
+        external topmenu and css for all main pages
+        move h2 tag style to external css
+    Files
+        New files
+            /webparts/topmenu.html
+            /webparts/style.css
+        Modified
+            renamed folder: cine_sunt --> config
+    Modified
+        lista_facturi.php
+            move topmenu and adjacent css to external files
+        index.php
+            Setari points to /config instead of /cine_sunt
+        lista_chitante.php
+            own topmenu with external css (mostly)
+            beautify table output
+        pozitii_facturi.php
+            beautify table header
+        lista_clienti.php
+            beautify table header
+    Bugfix
+        pozitii_facturi.php
+            inserted missind <tr> tag in header row
+            
+
+2.7.0 - beter displaying on mobile devices
+    Files
+        New files
+            index.php
+            licence.txt
+    Bugfix (mostly css)
+        global (most files)
+            css code
+                added meta viewport for mobile displays
+                added indentation where it was necessary, to increase readability
+        lista_facturi.php
+            css code
+                raise distance between topmenu and table
+                create orange background color for Factura noua option dropdown list
+                move inline css code (margins) to <head>
+        lista_clienti.php
+            css code
+                center table
+        client_nou.php
+            css code
+                reduce input size (better mobile compatibility)
+        pozitii_facturi.php
+            css code
+                center table
+        factura_common_code.php
+            replace small table (metoda_plata) with div
+
+2.6.0 - New feature: seller's info
+    Files
+        New directory
+            /cine_sunt
+        New files
+            /cine_sunt/editeaza_cine_sunt.php
+            /cine_sunt/update_cine_sunt.php
+            /webparts/version.txt
+        Rename
+            new_client.php --> client_nou.php
+        Delete
+            /facturi/lista.txt
+    Database
+        New table
+            cine_sunt
+    Bugfix
+        factura_common_code.php
+            correct small issue in documentation (comments)
+        editeaza_client.php
+            delete bloatware css code
+            beautify (CSS)
+        lista_facturi.php
+            delete extra </br> tag
+    Small Features
+        update_client.php
+            "Record updated successfully" --> "Date actualizate cu succes"
+        factura_common_code.php, chitanta_common_code.php
+            get seller info from (editable) database instead of static code
+        lista_facturi.php
+            new menu point: Setari
+            display version number
+        lista_clienti.php
+            beautify upper menu
+    Modified
+        genereaza_client.php
+            changed     header("Location:new_client.php"); to header("Location:client_nou.php");
+        database_structure.php
+            updated table descriptions
+
+
+2.5.1
+    Bugfix
+        Database
+            ALTER TABLE chitante MODIFY COLUMN nr_chit smallint(4) unsigned zerofill (to insert s/n of type 0013 instead of 13)
+
+2.5.0 - Restructure files and folders
+    Files
+        renamed folder factura to facturi
+        renamed folder client to clienti
+        renamed factura.php to imprima_factura.php
+        renamed factura_cu_chitanta.php to imprima_factura_cu_chitanta.php
+        deleted folder: html
+        new folders:
+            ob_inv
+            webparts
+        Moved into folder webparts:
+            conector
+            chitanta_common_code.php
+            factura_common_code.php
+        Moved files into folder facturi:
+            adauga_pozitie.php
+            editeaza_factura.php
+            editeaza_pozitii.php
+            generator_factura.php
+            generator_factura_cu_chitanta.php
+            imprima_factura.php
+            imprima_factura_cu_chitanta.php            
+            incarca_factura.php
+            incarca_factura_cu_chitanta.php
+            lista_facturi.php
+            pozitii_facturi.php
+            sterge_factura.php
+            sterge_pozitie.php
+            update_factura_antet.php
+            update_factura_produse.php
+            update_pozitii.php
+        Moved files into folder chitante:
+            chitanta_noua.php
+            editeaza_chitanta.php
+            imprima_chitanta.php
+            incarca_chitanta.php
+            lista_chitante.php
+            lista.txt
+            sterge_chitanta.php
+            update_chitanta.php
+        Moved files into folder clienti:
+            editeaza_client.php
+            genereaza_client.php
+            lista_clienti.php
+            new_client.php
+            sterge_client.php
+            update_client.php
+    Features
+        Updated all files to accomodate new paths
+        new_client.php
+            new URL to lista_facturi.php
+        lista_clienti.php
+            hide client id
+    Bugfix
+        fixed wrong references to numar_factura column in database
+
+
+2.4.0
+    Bugfix
+        editeaza_chitanta.php
+            corrected <head><title> from Editare factura to Editare chitanta
+        lista_chitante.php
+            send numar_factura instead of nr_chit to imprima_chitanta.php
+        table facturi
+            rename numar to numar_factura       
+        factura_common_code.php
+        chitanta_common_code.php
+        editeaza_factura.php
+        editeaza_pozitii.php
+        generator_factura_cu_chitanta.php
+        generator_factura.php
+        incarca_factura_cu_chitanta.php
+        incarca_factura.php
+        lista_facturi.php
+        pozitii_facturi.php
+        update_factura_antet.php
+        update_factura_produse.php
+        update_pozitii.php
+            changed $numar to $numar_factura
+    New file
+        imprima_chitanta.php
+
+
+2.3.0
+    Bugfix
+        lista_facturi.php
+            changed margins of table
+        chitanta_noua.php
+            form action uses document root path
+        lista_chitante
+            corrected "Sterg factura?" to "Sterg chitanta?" 
+        genereaza_chitanta.php
+            rename variables to prevent conflicts when using factura cu chitanta
+    Functionality
+        incarca_factura_cu_chitanta.php
+            combine code from incarca_factura and genereaza_chitanta
+        generator_factura_cu_chitanta.php
+            combine code from generator_factura and chitanta_noua
+    Files
+        rename genereaza_chitanta.php to incarca_chitanta.php
+    Database
+        create separate column for serie and numar factura in chitante table
+        edited all files from chitanta directory to work with the new structure
+        
+
+2.2.0 - Further implementation of Chitante
+        lista_facturi.php
+    Feature
+      Menu: dropdown menu with 2 options: cu chitanta, fara chitanta (with and without receipt)
+    New files
+        generator_factura_cu_chitanta.php
+        incarca_factura_cu_chitanta.php
+    Bugfix
+        generator_factura.php
+        generator_factura_cu_chitanta.php
+            titles are more foolproof (headings)
+        lista_chitante.php
+            replaced Pozitii facturi in menu with Facturi
+
+2.1.0
+    Small feature
+        lista_facturi.php
+            Menu: include Chitante
+    Bugfix
+        genereaza_chitanta.php
+            activate header
+        chitanta_noua.php
+            delete targe="_blank" from form
+
+2.0.0 - MAJOR VERSION - Chitante (Receipts)
+    New files
+        chitante folder
+            chitanta noua.php
+            editeaza_chitanta.php
+            genereaza_chitanta.php
+            lista_chitante.php
+            sterge_chitanta.php
+            update_chitanta.php
+	Database 
+        new table: chitante
+
+1.12.0
+    New feature
+        chitanta_common_code.php
+            date and number of chitanta can be completed digitally, before printing
+
+1.11.1
+    Bugfix (not saved as separate version)
+        changed data type of szamalzo.facturi.cant from integer to decimal(10,2)
+
+1.11.0
+    Small feature
+        lista_facturi.php
+            color background for top menu, changing color on mouse hover
+
+1.10.1
+    Bugfix
+        chitanta_common_code.php, factura_common_code.php, factura.css
+            changed font sizes from dreamy "small" to fixed 12 and 14 px
+            change spelled value of chitanta input height by manipulating border and font properties.
+            Firefox can print bills, again.
+
+
+1.10.0
+    New feature
+        factura_cu_chitanta.php
+            added input for spelled value of chitanta (ex. 100 lei = OSUTALEI)
+
+
+
+1.9.1
+    New feature
+        lista_facturi.php, lista_clienti.php, pozitii_facturi.php
+            light grey background for rows when hovering with mouse
+        lista_clienti.php
+            smaller fonts
+
+
+1.9.0
+    New feature
+        factura.php, factura_cu_chitanta.php, factura_common_code.php
+            method of payment (OP or Cash)
+
+
+1.8.3
+    Bugfix
+        generator_factura.php
+            New bill number was taken based on a listing that used id number instead of bill number After creating a bill with number 0000 (for testing), the next bill's number was 0001 instead of 0006. Corrected using a query based on numar (bill number), not id, to calculate new bill's number.
+
+
+1.8.2
+    Modified
+        lista_clienti.php
+            added 100px of margin-bottom top improve UX
+            client list - alphabetically ordered
+        new_client.php
+            added clear onclick for address input
+
+    Bugfix
+        editeaza_factura.php
+            numar was fixed to 0006 instead of $numar
+        update_factura_produse.php
+            
+
+
+1.8.1
+    Modified
+        editeaza_factura
+            upload all inputs with one button
+            non-editable nr_crt
+            modified adauga_pozitie link to accomodate new code in adauga_pozitie.php
+        update_factura_produse
+            rewrote code to suit multiple inputs
+        adauga_pozitie
+            rewrote code
+
+
+
+1.8.0
+    New feature
+        editeaza_factura.php
+            Adauga pozitie
+
+    Modified
+        pozitii_facturi.php
+            deleted printing options
+            better positioning of table
+            inject own address into Stergere url. Now sterge_pozitie.php can be used in common with editeaza_factura.php which also injects its own address into the url
+            added ORDER BY to select. Needed since Adauga pozitie came into life (will screw up ids relative to bill numbers)
+
+    Bugfix
+        generator_factura.php
+            onblur="calculate" to quantity input
+        editeaza_factura.php
+            onblur="calculate" to quantity input
+        sterge_pozitie.php
+            fixed wrong redirect header
+
+    New files
+        adauga_pozitie.php
+
+1.7.0
+    New feature
+        editeaza_factura.php
+            auto-calculate editable product fields (JavaScript)
+        generator_factura.php
+            dropdown list to quickly select number of desired rows
+            new link: lista_clienti.php
+        lista_clienti.php
+            JavaScript confirmation dialog for client deletion
+
+    Bugfix
+        editeaza_factura.php
+            auto-select current client name to avoid mistaken client name updates
+        
+    Modified
+        editeaza_pozitii.php
+            optimize code (echo html code for submit button)
+        update_pozitii.php
+            header: pozitii_facturi.php instead of lista_facturi.php
+        update_factura.php
+            split into update_factura_antet.php and update_factura_produse.php with redirect to same page (to not lose editing focus)
+        editeaza_factura.php
+            separate forms for main bill info update (numar, data, aviz, client) and product update
+            hidden input to transfer bill number to update_factura_produse.php
+            visually optimize display of input elements
+        generator_factura.php
+            hidden input for max product number
+            visually optimize display of input elements
+            
+        
+    New files
+        update_factura_antet.php
+        update_factura_produse.php
+            
+1.6.1
+
+    Bugfix
+        pozitii_facturi.php was not able to delete individual positions (whole bill only)
+
+    Modify
+        pozitii_facturi.php
+        
+    New files
+        sterge_pozitie.php
+
+
+
+
+1.6.0 - simplified bill editing and introduced bugs that need fixing
+    
+New feature
+    selector hint for correct client names (needs automation)
+    
+Bugfix
+    szamlazo.facturi varchar was not storing bill numbers (numar) with zerofill so it needed to be converted back to smallint(4) unsigned zerofill
+    
+Modify
+    factura_common_code.php - fetch bill number using $numar variable instead of $row["numar"] to not lose leading zeros
+    
+    chitanta_common_code.php - same value fecthing as above
+
+    lista_facturi.php - JavaScript confirmation dialog will not show bill number and client due to a bug that I cannot fix now.
+    
+New files
+    update_pozitii.php
+    editeaza_factura.php
+    database_structure.txt
+    
+
+
+1.5.0 - simplified list of bills
+
+New features
+    simplified list of bills with totals instead of verbose mode
+    list of bills in descending order (newest first)
+    links
+        lista_facturi.php --> pozitii_facturi.php
+        pozitii_facturi.php --> lista_facturi.php
+
+Modify
+    table "facturi", column "numar": change type from smallint to varchar(4) will make printable bill to contain full number string (Numar factura: 0001) instead of just one integer (Numar factura: 1)
+
+Renamed
+    trimite_factura_in_mysql.php --> incarca_factura.php
+
+
+1.4.0 - confirmation dialog for receipt deletion, with OK and Cancel buttons, displaying receipt number and client name
+
+Modified
+    lista_facturi.php
+
+
+
+1.3.0 - arithmetic in generator_factura.php (JavaScript)
+
+Modified
+    generator_factura.php
+
+
+
+
+1.2.1 - code optimization
+
+Code reuse in chitanta_common_code.php by pushind loop results into array in factura_common_code.php.
+Shorten the name of some variables inside prepared statements.
+
+Modified:
+    factura_common_code.php
+    chitanta_common_code.php
+
+
+
+1.2.0 - implementing Chitanta
+
+New feature: Factura cu si fara chitanta (pt. plata cu OP)
+
+New files:
+    chitanta_common_code.php - needs fixing serie, nr, data
+    chitanta.php
+    factura_common_code.php
+    factura_cu_chitanta.php
+    factura.css
+    
+Deleted files:
+    info.php
+    Model incarcare factura.ods
+    Procedura incarcare factura.txt
+    szamla.php
+    
+    
+Modified:
+    factura.php - outsourced most of the code to factura_common_code.php
+    lista_facturi.php - optimized CSS (incl font size)
+    
+    
+    
+
+1.1.1
+
+Contains new features + bugfixes
+
+
+New features:
+
+nr fact: last bill + 1
+links:
+    new_client.php --> generator_factura.php
+    generator_factura --> new_client.php
+    generator_factura --> facturi.php
+
+
+
+Bugfixes:
+
+factura.php
+    optimize print css
+        html, body padding (for margins)
+        #antet td elements with different width
+        rename: Serie si nr factura --> Serie si numar
+
+        
+
+
+1.0.0
+    Basic features
+        create new client
+        create new bill
+        list all bills - verbose mode
+        edit bills
+        edit clients
+        delete bills
+        delete clients
+        print bill

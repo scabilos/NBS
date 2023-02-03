@@ -1,0 +1,63 @@
+MariaDB [szamlazo]> describe clienti;
++-------------+-----------------+------+-----+---------+----------------+
+| Field       | Type            | Null | Key | Default | Extra          |
++-------------+-----------------+------+-----+---------+----------------+
+| id          | int(6) unsigned | NO   | PRI | NULL    | auto_increment |
+| nume        | varchar(65)     | NO   |     | NULL    |                |
+| reg_com     | varchar(15)     | YES  |     | NULL    |                |
+| tva         | varchar(5)      | YES  |     | NULL    |                |
+| cif         | varchar(20)     | YES  |     | NULL    |                |
+| adresa      | varchar(150)    | YES  |     | NULL    |                |
+| banca       | varchar(45)     | NO   |     | NULL    |                |
+| cont_bancar | varchar(35)     | YES  |     | NULL    |                |
++-------------+-----------------+------+-----+---------+----------------+
+
+
+MariaDB [szamlazo]> describe chitante;
++---------------+-------------------------------+------+-----+---------+-------+
+| Field         | Type                          | Null | Key | Default | Extra |
++---------------+-------------------------------+------+-----+---------+-------+
+| serie_chit    | varchar(1)                    | YES  |     | NULL    |       |
+| nr_chit       | smallint(4) unsigned zerofill | YES  |     | NULL    |       |
+| data_chit     | date                          | YES  |     | NULL    |       |
+| val_chit      | decimal(12,2)                 | YES  |     | NULL    |       |
+| serie_factura | char(1)                       | YES  |     | NULL    |       |
+| numar_factura | varchar(5)                    | YES  |     | NULL    |       |
++---------------+-------------------------------+------+-----+---------+-------+
+
+
+
+MariaDB [szamlazo]> describe facturi;
++---------------+-------------------------------+------+-----+---------+----------------+
+| Field         | Type                          | Null | Key | Default | Extra          |
++---------------+-------------------------------+------+-----+---------+----------------+
+| id            | int(11)                       | NO   | PRI | NULL    | auto_increment |
+| serie         | varchar(1)                    | YES  |     | NULL    |                |
+| numar_factura | smallint(4) unsigned zerofill | YES  |     | NULL    |                |
+| aviz          | varchar(8)                    | YES  |     | NULL    |                |
+| data          | date                          | YES  |     | NULL    |                |
+| nume          | varchar(65)                   | YES  |     | NULL    |                |
+| nr_crt        | smallint(2)                   | YES  |     | NULL    |                |
+| prod          | varchar(100)                  | YES  |     | NULL    |                |
+| um            | varchar(5)                    | YES  |     | NULL    |                |
+| cant          | decimal(10,2)                 | YES  |     | NULL    |                |
+| pret          | decimal(10,2)                 | YES  |     | NULL    |                |
+| valoare       | decimal(12,2)                 | YES  |     | NULL    |                |
++---------------+-------------------------------+------+-----+---------+----------------+
+
+
+MariaDB [szamlazo]> describe cine_sunt;
++-------------+-----------------+------+-----+---------+----------------+
+| Field       | Type            | Null | Key | Default | Extra          |
++-------------+-----------------+------+-----+---------+----------------+
+| id          | int(6) unsigned | NO   | PRI | NULL    | auto_increment |
+| nume        | varchar(65)     | NO   |     | NULL    |                |
+| reg_com     | varchar(15)     | YES  |     | NULL    |                |
+| tva         | varchar(5)      | YES  |     | NULL    |                |
+| cif         | varchar(20)     | YES  |     | NULL    |                |
+| adresa      | varchar(150)    | YES  |     | NULL    |                |
+| banca       | varchar(45)     | NO   |     | NULL    |                |
+| cont_bancar | varchar(35)     | YES  |     | NULL    |                |
++-------------+-----------------+------+-----+---------+----------------+
+
+

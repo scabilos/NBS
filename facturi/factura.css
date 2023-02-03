@@ -1,0 +1,32 @@
+body {width:190mm; height:275mm; 
+	position:absolute; left:4%;} 
+	
+	@page {
+	  size: A4;
+	  margin: 0;
+	}
+	@media print {
+	  html, body {
+	    width: 190mm;
+	    height: 275mm;
+	    padding-top:20px;
+	  }
+	}
+	
+#antet {margin-bottom:30px; font-size:12px;}
+/* #div_prod {height:675px;} */
+#div_prod {height:600px;}
+#metoda_plata {height:70px; font-size:14px;}
+#produse {width:100%; font-size:14px;}
+#prod_header {font-weight:bold;}
+#prod_header:first-child td {border-bottom:1px solid;}
+#total td {border-top:1px solid;}
+#footer {width:100%; font-size:small; line-height:25px;}
+#footer td {border:1px solid; vertical-align:top;}
+#foot_sem, #foot_primire {width:20%;}
+#foot_delegat {width:60%;}
+.center {text-align:center;} 
+
+#chitanta {margin-top:20px; font-size:12px; border:1px solid;}
+#date_chitanta {text-align:center; vertical-align:top;}
+#date_client_chitanta {padding-top:20px;}

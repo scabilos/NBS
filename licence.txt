@@ -1,0 +1,16 @@
+RO
+NBS (Network Billing Software) este realizat/dezvoltat de catre Bocskai Csaba, titular al Bocskai Csaba Intreprindere Individuala, in calitate de dezvoltator software.
+Acest software este gratuit.
+
+Se permite:
+    - utilizarea de catre orice entitate inregistrata la Registrul Comertului, cu scopul de a emite facturi catre clienti
+    - utilizarea de catre persoane fizice, cu scopul de a invata cum functioneaza aplicatia
+    - distribuirea cu titlu gratuit
+    - instalarea pe orice server sau statie de lucru
+    
+Se interzice
+    - distribuirea softului contra cost
+    - distribuirea softului sau a partilor softului ca si cum ar fi fost dezvoltat de altcineva (vezi plagiat si infractiuni conexe)
+EN
+    - modificarea softului. Acest lucru este important pentru mentineera stabilitatii. In caz ca se gasesc bug-uri (defecte), acestea se raporteaza dezvoltatorului. La fel si sugestiile de imbunatatire.
+
