@@ -1,6 +1,6 @@
 <?php
 include '../webparts/conector.php';
-header("Location:client_nou.php");
+header("Location:lista_clienti.php");
 
 
 $nume = mysqli_real_escape_string($conn, $_POST['nume_client']);

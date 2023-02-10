@@ -1,3 +1,13 @@
+2.8.1
+    Bugfix
+        client_nou.php
+            delete target="_blank" - to avoid opening unneeded extra tab in browser
+        genereaza_client.php
+            changed Location:client_nou.php to Location:lista_clienti.php - to avoid misinterpreting blank form as unsuccesful client generation
+        update_cine_sunt.php
+            replaced unneeded links with header("Location:../index.php").
+
+
 2.8.0
     Global
         external topmenu and css for all main pages

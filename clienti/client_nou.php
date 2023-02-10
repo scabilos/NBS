@@ -15,7 +15,7 @@
 
         <?php include '../webparts/topmenu.html';?>
     
-        <form id="date_client" action="genereaza_client.php" target="_blank" method="post">
+        <form id="date_client" action="genereaza_client.php" method="post">
             <span> Nume client: </span> <input type="text" name="nume_client" size="60"> <br />
             <span> Reg. Com.: </span> <input type="text" name="reg_com_client" size="12"> <br />
             <span> TVA: </span> <input type="text" name="tva_client" size="5"> <br />
