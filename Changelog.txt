@@ -1,3 +1,16 @@
+2.8.2
+    Modified - arrange h1 and topmenu to left
+        client_nou.php
+        chitanta_noua.php
+        generator_factura.php
+        generator_factura_cu_chitanta.php        
+    Bugfix
+        lista_chitante.php
+            corrected typo in title
+        index.php
+            corrected typos in main menu
+
+
 2.8.1
     Bugfix
         client_nou.php

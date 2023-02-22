@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../webparts/style.css">
         <style>
+            h1, #topmenu {text-align:left; margin-left:10px;}
             form {display:inline;}
             input {margin-bottom:15px;}
         </style>

@@ -5,8 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../webparts/style.css">
         <style>
-            #topmenu, h1 {margin-left:10px;}
-            h1 {text-align:left;}
+            h1, #topmenu {text-align:left; margin-left:10px;}
             input[type=text] {width:350px;}
             span {display: inline-block; width:110px; text-align:right;}
             #datele_mele input {margin-bottom:15px;}

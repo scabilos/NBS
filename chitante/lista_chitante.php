@@ -18,7 +18,7 @@
 	<BODY>
 
 
-		<h1>Listă chitante</h1>
+		<h1>Listă chitanțe</h1>
 
         <?php include '../webparts/topmenu.html';?>
 		

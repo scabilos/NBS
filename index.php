@@ -24,9 +24,9 @@
         
         <table>
             <tr><td><a href="facturi/lista_facturi.php">Facturi</a></td></tr>
-            <tr><td><a href="chitante/lista_chitante.php">Chitante</a></td></tr>
-            <tr><td><a href="clienti/lista_clienti.php">Clienti</a></td></tr>
-            <tr><td><a href="config/editeaza_cine_sunt.php">Setari</a></td></tr>
+            <tr><td><a href="chitante/lista_chitante.php">Chitanțe</a></td></tr>
+            <tr><td><a href="clienti/lista_clienti.php">Clienți</a></td></tr>
+            <tr><td><a href="config/editeaza_cine_sunt.php">Setări</a></td></tr>
         </table>
         
         <div style="text-align:center;"><span><?php include 'webparts/version.txt';?></span></div>
