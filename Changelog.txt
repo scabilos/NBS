@@ -1,3 +1,21 @@
+2.9.0 - bugfix in chitante
+    Small feature
+        generator_factura.php
+            added Client nou button
+    Modified
+        lista_chitante.php
+            beautify code (indented javascript code)
+        incarca_chitanta.php
+            php code to invert date (as in incarca_factura.php)
+        style.css
+            added new code
+    Bugfix
+        chitanta_noua.php
+            autofill date to show correct fill format and to avoid introducing by mistake "before today" date. Can be overwritten if necessary.
+        lista_facturi.php, lista_chitante.php, lista_clienti.php
+            css to fix a bug in mobile display (factura noua, pozitii facturi, client nou and chitanta noua links too far on right side of screen)
+        
+
 2.8.2
     Modified - arrange h1 and topmenu to left
         client_nou.php

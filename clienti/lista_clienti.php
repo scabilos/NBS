@@ -5,6 +5,7 @@
 		<title>Lista clienti</title>
 		<link rel="stylesheet" href="../webparts/style.css">
 		<style>
+			body {max-width:fit-content; display: block; margin:auto;}
 			table {border:1px solid; font-size:14px; margin:auto;}
 			tr {padding-bottom:10px;}
 			#elso_sor td {border-bottom:1px solid;}
@@ -23,11 +24,11 @@
 	<BODY>
 
 
-		<h1 style="text-align:center;"> Lista clienti </h1>
+		<h1>Lista clienti</h1>
 
         <?php include '../webparts/topmenu.html';?>
         
-        <div id="topmenu" style="width:115px; margin-left:170px;">
+        <div id="new_stuff" style="width:120px;">
             <a href="client_nou.php">Client nou</a>
         </div>
         

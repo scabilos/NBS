@@ -10,6 +10,17 @@
             h1, #topmenu {text-align:left; margin-left:10px;}
             form {display:inline;}
             input {margin-bottom:15px;}
+            
+            #button {
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+            text-decoration: none;
+            color: initial;
+            background-color: #e9e9ed;
+            padding: 4px 10px;
+            border-radius: 5px;
+            }
         </style>
     </head>
     
@@ -45,7 +56,7 @@
 
 
         <form action="generator_factura.php" method="post" style="margin-bottom:35px; margin-right:15px;">
-            Numar pozitii 
+            Număr poziții 
             <select name="max_num" onchange="this.form.submit();">
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -70,9 +81,9 @@
             Serie <input type="text" name="serie" value="D" size="1"> 
             Număr <input type="text" name="numar_factura" value="<?php echo $numar_factura; ?>" size="4"> 
             Aviz <input type="text" name="aviz" value="-" size="4"> 
-            Data <input type="text" name="data" value="<?php echo $date; ?>" size="10"> 
+            Data <input type="text" name="data" value="<?php echo $date; ?>" size="10" style="margin-right:20px;"> 
             <input type="hidden" name="max_num_send" <?php echo 'value="' . $_POST[max_num] . '"' ; ?> size="6"> 
-            <select name="nume" style="margin-bottom:35px;">
+            Client <select name="nume" style="margin-bottom:35px; margin-left:5px;">
             <?php	
                 while($rows = $result->fetch_assoc())
                     {
@@ -81,8 +92,9 @@
                     }
             ?>
             </select>
-
-
+            
+            <a href="../clienti/client_nou.php" id="button" target="_blank" style="text-decoration:none; margin-left:20px; margin-bottom:50px;">Client nou</a>
+            
             <br>
             <?php
 
@@ -118,7 +130,7 @@
             <input type="submit" value="Genereaza Factura">
         </form>
 
-
+        
 
 
 

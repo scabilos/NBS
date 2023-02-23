@@ -5,7 +5,9 @@
 		<title>Lista chitante</title>
 		<link rel="stylesheet" href="../webparts/style.css">
 		<style>
-			table {border:1px solid; font-size:14px;}
+            body {max-width:fit-content; display: block; margin:auto;}
+            #wrapper {display: inline-block; margin:auto;}
+			table {border:1px solid; font-size:14px; margin-bottom:50px;}
 			table th, table td {border-right:1px solid;}
 			td {padding:10px 5px 0px; text-align:center;}
 			#nr_crt {width:20px;}
@@ -23,8 +25,8 @@
         <?php include '../webparts/topmenu.html';?>
 		
 		
-        <div style="margin-left:615px; margin-top:100px; margin-bottom:15px;">
-            <a href="chitanta_noua.php" id="dropbtn" style="text-decoration:none;">Chitanță nouă</a>
+        <div id="new_stuff" style="width:150px;">
+            <a href="chitanta_noua.php">Chitanță nouă</a>
         </div>
 
 
@@ -32,7 +34,7 @@
         
         <?php include '../webparts/conector.php';?>
 
-		<table style="margin-left:auto; margin-right:auto;">
+		<table>
 			
 			<th id="serie_chit">Serie</th>
 			<th id="nr_chit">Număr</th>
@@ -64,11 +66,11 @@
                                 '<td><a href="sterge_chitanta.php?nr_chit=' . $row[nr_chit] . '" onClick="return confirmare();">Sterge</a></td>' . "\r\n" .
                                 '<td><a href="imprima_chitanta.php?numar_factura=' . $row[numar_factura] . '" target="_blank">Imprima</a></td>' . "\r\n" .
                             '</tr>' . "\r\n" .
-'<script type=\'text/javascript\'>
-function confirmare() {
-return confirm("Șterg chitanța?")
-    }
-</script>'
+                            '<script type=\'text/javascript\'>
+                            function confirmare() {
+                            return confirm("Șterg chitanța?")
+                                }
+                            </script>' . "\r\n"
                             ;
 					}
 				} else {
