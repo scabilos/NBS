@@ -1,3 +1,12 @@
+2.10.0 - client name in chitante
+    Modified
+        lista_chitante.php
+            changed SQL query to join tables chitante and facturi in such way that php can display client name for each receipt
+            join serie and numar chitanta columns to optimize table width and improve reading experience
+            join serie and numar factura columns to optimize table width and improve reading experience
+            disable border-right for last column (Imprima)
+
+
 2.9.0 - bugfix in chitante
     Small feature
         generator_factura.php
