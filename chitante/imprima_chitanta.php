@@ -19,14 +19,14 @@
         ?>
 
 
-        <span>
+       <!-- <span>
         MEGOLDANI
 
         - numar_factura-val kihalaszni a kliens nevet es betolteni valtozoba
         Select nume from facturi where numar_factura = $numar_factura
         $nume_client = echo row[nume]
         Ha nem muxik, akkor myArray
-        </span>
+        </span>-->
 
 
 

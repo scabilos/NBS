@@ -1,3 +1,10 @@
+2.10.1
+    Bugfix
+        imprima_chitanta.php
+            hidden visible comment
+
+
+
 2.10.0 - client name in chitante
     Modified
         lista_chitante.php
