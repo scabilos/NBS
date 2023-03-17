@@ -1,3 +1,18 @@
+2.11.0 - separate receipt printing, date format change
+    New feature
+        imprima_chitanta.php
+            make receipt printing functional
+    Modified
+        lista_chitante.php, lista_facturi.php
+            change date format from YYY-MM-DD to DD-MM-YYYY
+        chitanta_common_code.php
+            used human readable variables instead of stupid array pointerss
+        lista_chitante.php
+            inserted $nume into printing link in order to pass it to the SQL query inside imprima_chitanta.php
+    
+        
+            
+
 2.10.1
     Bugfix
         imprima_chitanta.php

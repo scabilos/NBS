@@ -56,17 +56,20 @@
 
 				if ($result->num_rows > 0) {
 					while($row = $result->fetch_assoc()) {
+//                      prepare date format
+                        $datum = $row["data_chit"];
+                        $roman_datum = substr($datum, 8, 2) . '-' . substr($datum, 5, 2) . '-' . substr($datum, 0, 4);
 						echo
                             '<tr>' . 
                                 
                                 '<td id="chitanta">' . $row["serie_chit"] . " " . $row["nr_chit"] . '</td>' . "\r\n" .
-                                '<td>' . $row["data_chit"] . '</td>' . "\r\n" .
+                                '<td>' . $roman_datum . '</td>' . "\r\n" .
                                 '<td id="val_chit">' . $row["val_chit"] . '</td>' . "\r\n" .
                                 '<td id="nume_client">' . $row["nume"] . '</td>' . "\r\n" .
                                 '<td>' . $row["serie_factura"] . " " . $row["numar_factura"] . '</td>' . "\r\n" .
                                 '<td><a href="editeaza_chitanta.php?nr_chit=' . $row[nr_chit] . '">Editeaza</a></td>' . "\r\n" .
                                 '<td><a href="sterge_chitanta.php?nr_chit=' . $row[nr_chit] . '" onClick="return confirmare();">Sterge</a></td>' . "\r\n" .
-                                '<td id="imprima"><a href="imprima_chitanta.php?numar_factura=' . $row[numar_factura] . '" target="_blank">Imprima</a></td>' . "\r\n" .
+                                '<td id="imprima"><a href="imprima_chitanta.php?numar_factura=' . $row[numar_factura] . '&cumparator=' . $row[nume] . '" target="_blank">Imprima</a></td>' . "\r\n" .
                             '</tr>' . "\r\n" .
                             '<script type=\'text/javascript\'>
                             function confirmare() {

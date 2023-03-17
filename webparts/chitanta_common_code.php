@@ -50,11 +50,11 @@
     </tr>
     <tr>
         <td id="date_client_chitanta" style="width:60%;">
-<!--             A kovetkezokben emlitett $myArray a factura_common_code.php-ben van feltoltve -->
-            Am încasat de la <?php echo $myArray[0][1]; ?> <br>
-            Nr ORC/an: <?php echo $myArray[0][2]; ?> <br>
-            CIF: <?php echo $myArray[0][4]; ?><br>
-            Adresa: <?php echo $myArray[0][5]; ?> <br>
+<!--             A kovetkezokben emlitett valtozok a factura_common_code.php-ben vannak feltoltve -->
+            Am încasat de la <?php echo $cumparator; ?> <br>
+            Nr ORC/an: <?php echo $orc; ?> <br>
+            CIF: <?php echo $codfiscal; ?><br>
+            Adresa: <?php echo $adresa_sediu; ?> <br>
 
            
           

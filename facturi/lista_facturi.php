@@ -61,12 +61,15 @@
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
+//                  prepare date format
+                    $datum = $row["data"];
+                    $roman_datum = substr($datum, 8, 2) . '-' . substr($datum, 5, 2) . '-' . substr($datum, 0, 4);
                     echo
                         '<tr>' . 
                             '<td id="serie">' . $row["serie"] . '</td>' . "\r\n" .
                             '<td>' . $row["numar_factura"] . '</td>' . "\r\n" .
                             '<td id="aviz">' . $row["aviz"] . '</td>' . "\r\n" .
-                            '<td>' . $row["data"] . '</td>' . "\r\n" .
+                            '<td>' . $roman_datum . '</td>' . "\r\n" .
                             '<td>' . $row["nume"] . '</td>' . "\r\n" .
                             '<td>' . $row["total"] . '</td>' . "\r\n" .
                             '<td><a href="editeaza_factura.php?numar_factura=' . $row[numar_factura] . '">Editeaza</a></td>' . "\r\n" .
