@@ -22,8 +22,6 @@
 	
     <BODY>
 
-        <?php include '../webparts/version.txt';?>
-
         <h1>Listă facturi</h1>
 
         <?php include '../webparts/topmenu.html';?>
@@ -93,6 +91,8 @@
             ?>
         </table>
 
+        
+        <?php include '../webparts/footer.html' ?>
 
     </BODY>
     </HTML>

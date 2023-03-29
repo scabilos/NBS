@@ -1,3 +1,14 @@
+2.11.1 - minor changes
+    Modified
+        lista_facturi.php
+            remove version display (already having it on main page)
+        lista_facturi.php, lista_chitante.php, lista_clienti.php
+            added footer
+    New file
+        /webparts/footer.html
+
+
+
 2.11.0 - separate receipt printing, date format change
     New feature
         imprima_chitanta.php

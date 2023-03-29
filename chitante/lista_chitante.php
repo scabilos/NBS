@@ -87,6 +87,7 @@
 				?>
 		</table>
 
+		        <?php include '../webparts/footer.html' ?>
 		
 		
     </BODY>

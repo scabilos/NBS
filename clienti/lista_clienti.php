@@ -85,7 +85,7 @@ return confirm("Șterg client?")
 		</table>
 
 
-
+        <?php include '../webparts/footer.html' ?>
 
 
     </BODY>
