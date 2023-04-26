@@ -1,3 +1,11 @@
+2.11.2 - minor change
+    Modified
+        footer.html
+            added Company name
+        style.css
+            extra code to adapt the above
+
+
 2.11.1 - minor changes
     Modified
         lista_facturi.php
