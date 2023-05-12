@@ -1,7 +1,15 @@
+2.11.3 - improve footer look
+    Modified
+        footer.html
+            restructure html tags
+        style.css
+            modified to fit new footer look
+
 2.11.2 - minor change
     Modified
         footer.html
             added Company name
+            added version number
         style.css
             extra code to adapt the above
 
