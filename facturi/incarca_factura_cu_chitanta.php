@@ -3,14 +3,18 @@
     
 	include '../webparts/conector.php';
 
-        $serie = $_POST["serie"];
-        $numar_factura = $_POST["numar_factura"];
-        $aviz = $_POST["aviz"];
-        $date = $_POST["data"];
-//         Meg kell forditanom a datumot, hogy MySQL tudja fogadni a formatumot
-        $data = substr($date, -4, 4) . '-' . substr($date, -7, 2) . '-' . substr($date, 0, 2);
-        $nume = $_POST["nume"];
-  
+	// Szamla adatai
+    $serie = $_POST["serie"];
+    $numar_factura = $_POST["numar_factura"];
+    $aviz = $_POST["aviz"];
+    $date = $_POST["data"];
+    // Meg kell forditanom a datumot, hogy MySQL tudja fogadni a formatumot
+    $data = substr($date, -4, 4) . '-' . substr($date, -7, 2) . '-' . substr($date, 0, 2);
+    $nume = $_POST["nume"];
+    
+    
+
+
   
 	$szamlalo = 1;
 	$hanyszor = $_POST['max_num_send'];
@@ -24,55 +28,40 @@
         $valoare = $_POST['valoare_' . $szamlalo];
             
             
-        $sql = "INSERT INTO facturi 
-            (serie, numar_factura, aviz, data, nume, nr_crt, prod, um, cant, pret, valoare) 
+        $sql1 = "INSERT INTO facturi 
+             (serie, numar_factura, aviz, data, nume, nr_crt, prod, um, cant, pret, valoare) 
             VALUES 
-            ('$serie', '$numar_factura', '$aviz', '$data', '$nume', '$nr_crt', '$prod', '$um', '$cant', '$pret', '$valoare')";
-        
-        if ($conn->query($sql) === TRUE) {
-            echo "Record updated successfully";
-            } else {
-            echo "Error updating record: " . $conn->error;
-            }
-            
-            
-            
+             ('$serie', '$numar_factura', '$aviz', '$data', '$nume', '$nr_crt', '$prod', '$um', '$cant', '$pret', '$valoare')";
+
+             "INSERT INTO chitante (serie_chit, nr_chit, data_chit, val_chit, serie_factura, numar_factura) VALUES ('$serie_chit', '$numar_chit', '$data_chit', '$valoare_chit', '$serie_factura', '$numar_factura')";
+             
         $szamlalo++;
-        }   /*Itt fejezem be a for ciklust*/
- 	
-
-
-		
-
-
-?>
-
-
-<?php
-
-
-$serie_chit = mysqli_real_escape_string($conn, $_POST['serie_chit']);
-$numar__chit = mysqli_real_escape_string($conn, $_POST['nr_chit']);
-$data_chit = mysqli_real_escape_string($conn, $_POST['data_chit']);
-$valoare_chit = mysqli_real_escape_string($conn, $_POST['val_chit']);
-$serie_factura = mysqli_real_escape_string($conn, $_POST['serie_factura']);
-$numar_factura = mysqli_real_escape_string($conn, $_POST['numar_factura']);
-
-
-$sql = "INSERT INTO chitante (serie_chit, nr_chit, data_chit, val_chit, serie_factura, numar_factura) VALUES ('$serie_chit', '$numar_chit', '$data_chit', '$valoare_chit', '$serie_factura', '$numar_factura')";
+        }   /*Itt fejezem be a for ciklust*/             
+             
 
 
 
+    // Chitanta adatai
+    $serie_chit = mysqli_real_escape_string($conn, $_POST['serie_chit']);
+    $numar_chit = mysqli_real_escape_string($conn, $_POST['nr_chit']);
+    $d_chit = $_POST["data_chit"]; // Ebbol szarmaztatom a datumot
+    $data_chit = substr($d_chit, -4, 4) . '-' . substr($d_chit, -7, 2) . '-' . substr($d_chit, 0, 2);
+    $valoare_chit = mysqli_real_escape_string($conn, $_POST['val_chit']);
+    $serie_factura = mysqli_real_escape_string($conn, $_POST['serie_factura']);
+    $numar_factura = mysqli_real_escape_string($conn, $_POST['numar_factura']);
 
-if(mysqli_query($conn, $sql)){
-    echo "Records added successfully.";
-} else{
-    echo "ERROR: Could not execute $sql. " . mysqli_error($conn);
-}
+                 
+    $sql2 = "INSERT INTO chitante (serie_chit, nr_chit, data_chit, val_chit, serie_factura, numar_factura) VALUES ('$serie_chit', '$numar_chit', '$data_chit', '$valoare_chit', '$serie_factura', '$numar_factura')";
+            
 
+    if ($conn->query($sql1) === TRUE && $conn->query($sql2) === TRUE) {
+        echo "Record updated successfully";
+        } else {
+        echo "Error updating facturi: " .$sql1 . $conn->error . " in file incarca_factura_cu_chitanta.php";
+        echo "Error updating chitante: " . $sql2 . $conn->error . " in file incarca_factura_cu_chitanta.php";
+        }
+            
 
-	$conn->close();
-
-
+    $conn->close();
 
 ?>

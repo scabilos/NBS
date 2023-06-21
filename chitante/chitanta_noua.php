@@ -41,11 +41,11 @@
 
         <form id="date_client" action="incarca_chitanta.php" method="post">
             Serie: <input type="text" name="serie_chit" id="sn" value="D" size="1">
-            Numar: <input type="text" name="nr_chit" value="<?php echo $nr_chit; ?>" id="nr" size="4">
+            Numar: <input type="number" name="nr_chit" value="<?php echo $nr_chit; ?>" id="nr" size="4">
             Data: <input type="text" name="data_chit" value="<?php echo $date; ?>" id="data_chit" size="5">
-            Valoare: <input type="text" name="val_chit" id="val" size="5">
+            Valoare: <input type="number" name="val_chit" id="val" size="5">
             Serie Factura: <input type="text" name="serie_factura" value="D" id="fac" size="1">
-            Numar Factura: <input type="text" name="numar_factura" id="fac" size="5">
+            Numar Factura: <input type="number" name="numar_factura" id="fac" size="5">
             <input type="submit" value="Inregistreaza">
         </form>
 

@@ -21,6 +21,7 @@ MariaDB [szamlazo]> describe chitante;
 | nr_chit       | smallint(4) unsigned zerofill | YES  |     | NULL    |       |
 | data_chit     | date                          | YES  |     | NULL    |       |
 | val_chit      | decimal(12,2)                 | YES  |     | NULL    |       |
+| val_litere    | varchar(150)                  | YES  |     | NULL    |       |
 | serie_factura | char(1)                       | YES  |     | NULL    |       |
 | numar_factura | varchar(5)                    | YES  |     | NULL    |       |
 +---------------+-------------------------------+------+-----+---------+-------+

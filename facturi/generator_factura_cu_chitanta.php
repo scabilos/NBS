@@ -68,18 +68,18 @@
 
         <form action="incarca_factura_cu_chitanta.php" method="post"> 
             Serie <input type="text" name="serie" value="D" size="1"> 
-            Număr <input type="text" name="numar_factura" value="<?php echo $numar_factura; ?>" size="4"> 
+            Număr <input type="number" name="numar_factura" value="<?php echo $numar_factura; ?>" size="4"> 
             Aviz <input type="text" name="aviz" value="-" size="4"> 
             Data <input type="text" name="data" value="<?php echo $date; ?>" size="10"> 
             <input type="hidden" name="max_num_send" <?php echo 'value="' . $_POST[max_num] . '"' ; ?> size="6"> 
             <select name="nume" style="margin-bottom:35px;">
-            <?php	
-                while($rows = $result->fetch_assoc())
-                    {
-                    $nume = $rows['nume'];
-                    echo "<option value='$nume'>$nume</option>" . "\r\n"  ;
-                    }
-            ?>
+                <?php	
+                    while($rows = $result->fetch_assoc())
+                        {
+                        $nume = $rows['nume'];
+                        echo "<option value='$nume'>$nume</option>" . "\r\n"  ;
+                        }
+                ?>
             </select>
 
 
@@ -115,17 +115,20 @@
             ?>
 
 
-
             <br>
-
                 <h2> Chitanta noua </h2>
+                    
+                    <?php
+                    // Date for input autofill
+                    $date = date("j-m-Y");
+                    ?>
 
                     Serie: <input type="text" name="serie_chit" id="sn" value="D" size="1">
-                    Numar: <input type="text" name="nr_chit" id="nr" size="4">
-                    Data: <input type="text" name="data_chit" id="data" size="5">
+                    Numar: <input type="number" name="nr_chit" id="nr" size="4">
+                    Data: <input type="text" name="data_chit" id="data" value="<?php echo $date; ?>" size="5">
                     Valoare: <input type="text" name="val_chit" id="val" size="8">
-                    Serie Factura: <input type="text" name="serie_factura" id="fac" size="5">
-                    Numar Factura: <input type="text" name="numar_factura" id="fac" size="5">
+                    Serie Factura: <input type="text" name="serie_factura" id="fac" value="D" size="5">
+                    Numar Factura: <input number="text" name="numar_factura" id="fac" size="5">
                             
                     <p></p>
                     
