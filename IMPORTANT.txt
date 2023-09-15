@@ -1,0 +1,2 @@
+Backup old database.
+Use szamlazo_schema.sql instead of old schema, otherwise you'll have issues with Chitante.
