@@ -131,9 +131,9 @@
                     '<td class="center">' . $row["nr_crt"] . '</td>' . "\r\n" .
                     '<td>' . $row["prod"] . '</td>' . "\r\n" .
                     '<td class="center">' . $row["um"] . '</td>' . "\r\n" .
-                    '<td class="center">' . number_format($row["cant"], 2, ',', '.') . '</td>' . "\r\n" . //Tizedeseket vesszovel valasztja el
-                    '<td class="center">' . number_format($row["pret"], 2, ',', '.') . '</td>' . "\r\n" .
-                    '<td class="center">' . number_format($row["valoare"], 2, ',', '.') . '</td>' . "\r\n" .
+                    '<td class="right">' . number_format($row["cant"], 2, ',', '.') . '</td>' . "\r\n" . //Tizedeseket vesszovel valasztja el
+                    '<td class="right">' . number_format($row["pret"], 2, ',', '.') . '</td>' . "\r\n" .
+                    '<td class="right">' . number_format($row["valoare"], 2, ',', '.') . '</td>' . "\r\n" .
                 '</tr>'
                 ;
             }
@@ -152,7 +152,7 @@
 
         <tr id="total">
             <td colspan="5" style="text-align:right; font-weight:bold; padding-right:20px;">TOTAL</td>
-            <td style="font-weight:bold; text-align:center;"> <?php echo number_format($row["total"], 2, ',', '.'); ?>  </td>
+            <td style="font-weight:bold; text-align:right;"> <?php echo number_format($row["total"], 2, ',', '.'); ?>  </td>
         </tr>
 
         <?php

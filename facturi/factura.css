@@ -26,6 +26,7 @@ body {width:190mm; height:275mm;
 #foot_sem, #foot_primire {width:20%;}
 #foot_delegat {width:60%;}
 .center {text-align:center;} 
+.right {text-align:right;} 
 
 #chitanta {margin-top:20px; font-size:12px; border:1px solid;}
 #date_chitanta {text-align:center; vertical-align:top;}

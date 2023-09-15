@@ -18,7 +18,7 @@
 
     <?php include '../webparts/topmenu.html';?>
     
-    
+    <div style="margin-left:10px; margin-bottom:50px;"> <a id="dropbtn" style="text-decoration:none;" href="../facturi/pozitii_facturi.php">Poziții facturi</a> </div>
     
     
     <?php

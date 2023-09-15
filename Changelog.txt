@@ -1,3 +1,39 @@
+2.13.1 - minor bugfixes
+    Modified
+        lista_facturi.php
+            delete demo link
+            delete "Pozitii facturi" link
+        editeaza_cine_sunt.php
+            insert "Pozitii facturi" link
+        style.css
+            change footer font color and weight
+        footer.html
+            correct footer hr css bug
+            
+
+2.13.0 - rewrote code for generator_factura.php
+    Modified
+        generator_factura.php
+            autognerates first row of products/services
+            bypasses incarca_factura.php
+    Bugfix
+        editeaza_factura.php
+            fixed not loading correct client name into options list
+
+
+2.12.1 - bugfixes
+    Bugfix
+        incarca_factura_cu_chitanta.php
+            fixed impossible to upload multiple positions bug
+            fixed escape character bug in inserting date line
+        factura_common_code.php, factura.css
+            aligned numbers to right instead of center
+    Modified
+        topmenu.html
+            rearranged links (different order)
+
+
+
 2.12.0 - Factura cu chitanta functional
     Database
         add column val_litere to table chitante

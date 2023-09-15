@@ -33,18 +33,23 @@
             VALUES 
              ('$serie', '$numar_factura', '$aviz', '$data', '$nume', '$nr_crt', '$prod', '$um', '$cant', '$pret', '$valoare')";
 
-             "INSERT INTO chitante (serie_chit, nr_chit, data_chit, val_chit, serie_factura, numar_factura) VALUES ('$serie_chit', '$numar_chit', '$data_chit', '$valoare_chit', '$serie_factura', '$numar_factura')";
-             
-        $szamlalo++;
-        }   /*Itt fejezem be a for ciklust*/             
-             
 
+             
+        if ($conn->query($sql1) === TRUE) {
+        echo "Record updated successfully";
+        } else {
+        echo "Error updating facturi: " .$sql1 . $conn->error . " in file incarca_factura_cu_chitanta.php";
+        }
+        
+    $szamlalo++;
+    }   /*Itt fejezem be a for ciklust*/             
+             
 
 
     // Chitanta adatai
     $serie_chit = mysqli_real_escape_string($conn, $_POST['serie_chit']);
     $numar_chit = mysqli_real_escape_string($conn, $_POST['nr_chit']);
-    $d_chit = $_POST["data_chit"]; // Ebbol szarmaztatom a datumot
+    $d_chit = mysqli_real_escape_string($conn, $_POST["data_chit"]); // Ebbol szarmaztatom a datumot
     $data_chit = substr($d_chit, -4, 4) . '-' . substr($d_chit, -7, 2) . '-' . substr($d_chit, 0, 2);
     $valoare_chit = mysqli_real_escape_string($conn, $_POST['val_chit']);
     $serie_factura = mysqli_real_escape_string($conn, $_POST['serie_factura']);
@@ -54,10 +59,9 @@
     $sql2 = "INSERT INTO chitante (serie_chit, nr_chit, data_chit, val_chit, serie_factura, numar_factura) VALUES ('$serie_chit', '$numar_chit', '$data_chit', '$valoare_chit', '$serie_factura', '$numar_factura')";
             
 
-    if ($conn->query($sql1) === TRUE && $conn->query($sql2) === TRUE) {
+    if ($conn->query($sql2) === TRUE) {
         echo "Record updated successfully";
         } else {
-        echo "Error updating facturi: " .$sql1 . $conn->error . " in file incarca_factura_cu_chitanta.php";
         echo "Error updating chitante: " . $sql2 . $conn->error . " in file incarca_factura_cu_chitanta.php";
         }
             

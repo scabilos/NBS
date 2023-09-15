@@ -15,7 +15,7 @@
             #adr {margin-left:58px;}
             #ba {margin-left:64px;}
             #cb {margin-left:25px;}
-            hr {margin-bottom:20px; margin-left:20px; border-top:1px dotted;}
+            hr {width:61%; margin-bottom:20px; margin-left:20px; border-top:1px dotted;}
             #adauga {margin-left:25px}
         </style> 
     </head>
@@ -33,6 +33,14 @@
         
         <?php
             include '../webparts/conector.php';
+            
+            session_start();
+            
+            if (empty($_GET['numar_factura'])) {
+                $_GET['numar_factura'] = $_SESSION['numar_factura'];
+            }
+            
+            
             $numar_factura = $_GET['numar_factura'];
             
 
@@ -59,22 +67,32 @@
                     } else {
                         echo "0 results";
                     }
-        ?>
 
-        Client:
-        <select name="nume">
-        <?php	
-            //  Kliens lista. Kell a szelektorhoz.
-            $sql_clienti = "select distinct clienti.nume from clienti left join facturi on clienti.nume = facturi.nume order by numar_factura = $numar_factura desc, nume asc";
-            $result = $conn->query($sql_clienti);
-
-            while($rows = $result->fetch_assoc())
-                {
-                $nume = $rows['nume'];
-                echo '<option id="alege_client" value="' . $nume . '">' . $nume . '</option>';
+                $sql_chosen = "select nume from facturi where numar_factura = $numar_factura";
+                $result = $conn->query($sql_chosen);
+                while($rows1 = $result->fetch_assoc()) {
+                    $chosen = $rows1['nume'];
                 }
-        ?>
-        </select>
+            ?>
+
+
+            Client:
+            <select name="nume">
+            <?php	
+                //  Kliens lista. Kell a szelektorhoz.
+                $sql_clienti = "select nume from clienti order by nume asc";
+                $result = $conn->query($sql_clienti);
+
+                while($rows2 = $result->fetch_assoc()) {
+                    $nume = $rows2['nume'];
+                    if ($nume == $chosen) {
+                        echo '<option id="alege_client" value = "' . $nume . '" selected>' . $nume . '</option>' . "\r\n";
+                    } else {
+                        echo '<option id="alege_client" value = "' . $nume . '">' . $nume . '</option>' . "\r\n";
+                    }
+                }
+            ?>
+            </select>
 
             <input type="submit" value="Actualizeaza">
             

@@ -6,7 +6,7 @@
         $serie = $_POST["serie"];
         $numar_factura = $_POST["numar_factura"];
         $aviz = $_POST["aviz"];
-        $date = $_POST["data"];
+        $date = $_POST["data"]; // ez valoszinuleg nem kell
 //         Meg kell forditanom a datumot, hogy MySQL tudja fogadni a formatumot
         $data = substr($date, -4, 4) . '-' . substr($date, -7, 2) . '-' . substr($date, 0, 2);
         $nume = $_POST["nume"];

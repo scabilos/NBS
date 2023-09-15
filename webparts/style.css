@@ -18,6 +18,9 @@ th {border-bottom:1px solid; background-color:#ddd; height:30px;}
 /* Valoszinuleg a dropdown menuket ki lehet venni. Most mar nincs dropdown a fomenuben. Csekkolni, ezt a css-t hasznalom-e a Factura noua dropdown-nal vagy lokalisat. */
 
 #footmenu {background-color:#eee;}
-#links {word-spacing:50px; text-align:center;}
-#footmenu a {text-decoration:none; color:black;}
+#links {word-spacing:50px; text-align:center; font-weight:bold;}
+#footmenu a {text-decoration:none; color:#444;}
 #footmenu a:hover {text-decoration:underline;}
+
+
+

@@ -35,7 +35,6 @@
                     <a href="../facturi/generator_factura.php">fără chitanță</a>
                 </div>
             </div>
-            <a id="dropbtn" style="text-decoration:none; padding-left:25px;" href="../facturi/pozitii_facturi.php">Poziții facturi</a>
         </div>
 
 
